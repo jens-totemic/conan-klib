@@ -46,19 +46,16 @@ class KlibConan(ConanFile):
         cmake = self._configure_cmake()
         cmake.install()
 
-#     def package_info(self):
-#         if self.options.shared and self:
-#             self.cpp_info.libs = ["klib"]
-#         else:
-#             self.cpp_info.libs = ["klib-static"]
-# 
-# 		if self.settings.os == "Linux":
-# 			self.cpp_info.libs.append("c")
-# 			self.cpp_info.libs.append("dl")
-# 			self.cpp_info.libs.append("pthread")
-# 		elif self.settings.os == "FreeBSD":
-# 			self.cpp_info.libs.append("compat")
-# 			self.cpp_info.libs.append("pthread")
-# 		else:
-# 			self.cpp_info.libs.append("c")
-# 			self.cpp_info.libs.append("pthread")
+    def package_info(self):
+        self.cpp_info.libs = ["klib"]
+
+        if self.settings.os == "Linux":
+            self.cpp_info.libs.append("c")
+#			self.cpp_info.libs.append("dl")
+            self.cpp_info.libs.append("pthread")
+        elif self.settings.os == "FreeBSD":
+#			self.cpp_info.libs.append("compat")
+            self.cpp_info.libs.append("pthread")
+        else:
+            self.cpp_info.libs.append("c")
+            self.cpp_info.libs.append("pthread")

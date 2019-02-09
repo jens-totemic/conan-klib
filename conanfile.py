@@ -5,14 +5,14 @@ from conans import ConanFile, CMake, tools
 
 class KlibConan(ConanFile):
     name = "klib"
-    version = "2018.10.30" # there's not version number, so use date
+    version = "2019.02.08" # there's no version number, so use date
     source_subfolder = "sources"
     scm = {
         "type": "git",
         "subfolder": source_subfolder,
-        "url": "https://github.com/attractivechaos/klib.git",
-        # latest commit, 2018-10-30, 
-        "revision": "5fc2090766753bdaa9e53e0cc0734b285a891c85"
+        "url": "https://github.com/totemic/klib.git",
+        # latest commit, 2019.02.08, 
+        "revision": "e5387c7e18885e66cde66a4c6cd4c897e206c3d2"
     }
 
     homepage = "https://github.com/attractivechaos/klib"
